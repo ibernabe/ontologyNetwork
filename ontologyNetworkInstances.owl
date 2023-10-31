@@ -11,6 +11,33 @@
                                                                owl:imports <https://www.ia.urjc.es/ontologies/ontologyNetwork/> .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
+<https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> rdfs:domain [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> ;
+                                                                           owl:someValuesFrom <https://www.ia.urjc.es/ontologies/ontologyNetwork/Resource>
+                                                                         ] ;
+                                                             rdfs:range [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty owl:topDataProperty ;
+                                                                          owl:allValuesFrom rdfs:Literal
+                                                                        ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasUnit
+:hasUnit rdf:type owl:DatatypeProperty .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasValue
+:hasValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
 #    Individuals
 #################################################################
 
@@ -33,10 +60,9 @@
 :CN1 rdf:type owl:NamedIndividual ,
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN2 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :Cam1 ,
-                                                                     :HDD1 ,
-                                                                     :HS1 ,
-                                                                     :RAM1 .
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :HDD1 ,
+                                                                     :RAM1 ,
+                                                                     :TS1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN2
@@ -68,7 +94,9 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD1
 :HDD1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> .
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> ;
+      :hasUnit "MB"^^xsd:string ;
+      :hasValue "100"^^rdfs:Literal .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD2
@@ -83,7 +111,9 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS1
 :HS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> ;
+     :hasUnit "%"^^xsd:string ;
+     :hasValue 46 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS2
@@ -98,7 +128,9 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM1
 :RAM1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> ;
+      :hasUnit "MB"^^xsd:string ;
+      :hasValue "100"^^rdfs:Literal .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM2
@@ -109,6 +141,11 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM3
 :RAM3 rdf:type owl:NamedIndividual ,
                <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RCamera1
+:RCamera1 rdf:type owl:NamedIndividual ,
+                   <https://www.ia.urjc.es/ontologies/ontologyNetwork/Resource> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
@@ -131,7 +168,9 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
 :TS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> ;
+     :hasUnit "grados"^^xsd:string ;
+     :hasValue "21"^^rdfs:Literal .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS2
