@@ -1,0 +1,147 @@
+@prefix : <https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://www.ia.urjc.es/ontologies/ontologyNetwork/instances> .
+
+<https://www.ia.urjc.es/ontologies/ontologyNetwork/instances> rdf:type owl:Ontology ;
+                                                               owl:versionIRI <https://www.ia.urjc.es/ontologies/ontologyNetwork/instances> ;
+                                                               owl:imports <https://www.ia.urjc.es/ontologies/ontologyNetwork/> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#BW1
+:BW1 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Bandwidth> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#BW2
+:BW2 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Bandwidth> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#BW3
+:BW3 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Bandwidth> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN1
+:CN1 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN2 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :Cam1 ,
+                                                                     :HDD1 ,
+                                                                     :HS1 ,
+                                                                     :RAM1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN2
+:CN2 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN3
+:CN3 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN2 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam1
+:Cam1 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam2
+:Cam2 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam3
+:Cam3 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD1
+:HDD1 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD2
+:HDD2 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD3
+:HDD3 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS1
+:HS1 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS2
+:HS2 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS3
+:HS3 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM1
+:RAM1 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM2
+:RAM2 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM3
+:RAM3 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
+:S1 rdf:type owl:NamedIndividual ,
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
+:S2 rdf:type owl:NamedIndividual ,
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN2 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
+:S3 rdf:type owl:NamedIndividual ,
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
+:TS1 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS2
+:TS2 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS3
+:TS3 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
