@@ -13,11 +13,10 @@
 #    Object Properties
 #################################################################
 
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo
-:connectTo rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :ComputingNode ;
-           rdfs:range :ComputingNode .
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectedTo
+:connectedTo rdf:type owl:ObjectProperty ;
+             rdfs:domain :ComputingNode ;
+             rdfs:range :ComputingNode .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource
@@ -26,20 +25,20 @@
              rdfs:range :Resource .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/installedOn
+:installedOn rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit
-:hasUnit rdf:type owl:ObjectProperty ;
-         rdfs:range [ rdf:type owl:Restriction ;
-                      owl:onProperty owl:topDataProperty ;
-                      owl:allValuesFrom rdfs:Literal
-                    ] .
+:hasUnit rdf:type owl:DatatypeProperty .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
-:hasValue rdf:type owl:ObjectProperty .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn
-:isInstalledOn rdf:type owl:ObjectProperty .
+:hasValue rdf:type owl:DatatypeProperty .
 
 
 #################################################################
