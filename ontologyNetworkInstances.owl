@@ -11,42 +11,11 @@
                                                                owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo
-<https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> rdf:type owl:AnnotationProperty .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource
-<https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> rdf:type owl:AnnotationProperty .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn
-<https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Object Properties
 #################################################################
 
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
-<https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> rdfs:domain [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> ;
-                                                                           owl:someValuesFrom <https://www.ia.urjc.es/ontologies/ontologyNetwork/Resource>
-                                                                         ] ;
-                                                             rdfs:range [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty owl:topDataProperty ;
-                                                                          owl:allValuesFrom rdfs:Literal
-                                                                        ] .
-
-
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasRequirement
 :hasRequirement rdf:type owl:ObjectProperty ;
-                rdfs:domain [ rdf:type owl:Restriction ;
-                              owl:onProperty <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> ;
-                              owl:someValuesFrom <https://www.ia.urjc.es/ontologies/ontologyNetwork/Software>
-                            ] ;
                 rdfs:range :Requirement .
 
 
@@ -111,23 +80,17 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN1
 :CN1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN2 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :HDD1 ,
-                                                                     :RAM1 ,
-                                                                     :TS1 .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN2
 :CN2 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN1 .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN3
 :CN3 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> :CN2 .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam1
@@ -205,24 +168,21 @@
 :S1 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
     :hasRequirement :reqHDD1 ,
-                    :reqRAM1 ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
+                    :reqRAM1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
 :S2 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
     :hasRequirement :reqHDD2 ,
-                    :reqRAM2 ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN2 .
+                    :reqRAM2 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
 :S3 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
     :hasRequirement :reqHDD3 ,
-                    :reqRAM3 ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
+                    :reqRAM3 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
