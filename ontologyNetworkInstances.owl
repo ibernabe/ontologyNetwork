@@ -11,27 +11,6 @@
                                                                owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
 #################################################################
-#    Object Properties
-#################################################################
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasRequirement
-:hasRequirement rdf:type owl:ObjectProperty ;
-                rdfs:range :Requirement .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasUnit
-:hasUnit rdf:type owl:DatatypeProperty .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasValue
-:hasValue rdf:type owl:DatatypeProperty .
-
-
-#################################################################
 #    Classes
 #################################################################
 
@@ -110,9 +89,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD1
 :HDD1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> ;
-      :hasUnit "MB"^^xsd:string ;
-      :hasValue "100"^^rdfs:Literal .
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HDD> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HDD2
@@ -127,9 +104,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS1
 :HS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> ;
-     :hasUnit "%"^^xsd:string ;
-     :hasValue 46 .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS2
@@ -144,9 +119,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM1
 :RAM1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> ;
-      :hasUnit "MB"^^xsd:string ;
-      :hasValue "100"^^rdfs:Literal .
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/RAM> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM2
@@ -166,30 +139,22 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
 :S1 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    :hasRequirement :reqHDD1 ,
-                    :reqRAM1 .
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
 :S2 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    :hasRequirement :reqHDD2 ,
-                    :reqRAM2 .
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
 :S3 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    :hasRequirement :reqHDD3 ,
-                    :reqRAM3 .
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
 :TS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> ;
-     :hasUnit "grados"^^xsd:string ;
-     :hasValue "21"^^rdfs:Literal .
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS2
@@ -204,44 +169,32 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD1
 :reqHDD1 rdf:type owl:NamedIndividual ,
-                  :reqHDD ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 23 .
+                  :reqHDD .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD2
 :reqHDD2 rdf:type owl:NamedIndividual ,
-                  :reqHDD ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 60 .
+                  :reqHDD .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD3
 :reqHDD3 rdf:type owl:NamedIndividual ,
-                  :reqHDD ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 40 .
+                  :reqHDD .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM1
 :reqRAM1 rdf:type owl:NamedIndividual ,
-                  :reqRAM ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 55 .
+                  :reqRAM .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM2
 :reqRAM2 rdf:type owl:NamedIndividual ,
-                  :reqRAM ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 15 .
+                  :reqRAM .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM3
 :reqRAM3 rdf:type owl:NamedIndividual ,
-                  :reqRAM ;
-         :hasUnit "MB"^^xsd:string ;
-         :hasValue 25 .
+                  :reqRAM .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
