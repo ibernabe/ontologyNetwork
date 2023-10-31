@@ -11,6 +11,22 @@
                                                                owl:imports <https://www.ia.urjc.es/ontologies/ontologyNetwork/> .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo
+<https://www.ia.urjc.es/ontologies/ontologyNetwork/connectTo> rdf:type owl:AnnotationProperty .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource
+<https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> rdf:type owl:AnnotationProperty .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn
+<https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -188,25 +204,25 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
 :S1 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 ;
     :hasRequirement :reqHDD1 ,
-                    :reqRAM1 .
+                    :reqRAM1 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
 :S2 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN2 ;
     :hasRequirement :reqHDD2 ,
-                    :reqRAM2 .
+                    :reqRAM2 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN2 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
 :S3 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 ;
     :hasRequirement :reqHDD3 ,
-                    :reqRAM3 .
+                    :reqRAM3 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/isInstalledOn> :CN1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
