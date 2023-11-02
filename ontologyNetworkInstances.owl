@@ -11,6 +11,14 @@
                                                                owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasName
+:hasName rdf:type owl:DatatypeProperty .
+
+
+#################################################################
 #    Classes
 #################################################################
 
