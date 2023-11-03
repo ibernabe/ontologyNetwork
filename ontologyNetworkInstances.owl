@@ -19,6 +19,25 @@
 
 
 #################################################################
+#    Classes
+#################################################################
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCamera
+:reqCamera rdf:type owl:Class ;
+           rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHumiditySensor
+:reqHumiditySensor rdf:type owl:Class ;
+                   rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTemperatureSensor
+:reqTemperatureSensor rdf:type owl:Class ;
+                      rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
+
+
+#################################################################
 #    Individuals
 #################################################################
 
@@ -158,8 +177,31 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
 :S1 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqHDD1 ,
-                                                                       :reqRAM1 .
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam1 ,
+                                                                       :reqHDD1 ,
+                                                                       :reqHS1 ,
+                                                                       :reqRAM1 ,
+                                                                       :reqTS1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
+:S2 rdf:type owl:NamedIndividual ,
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam2 ,
+                                                                       :reqHDD2 ,
+                                                                       :reqHS2 ,
+                                                                       :reqRAM2 ,
+                                                                       :reqTS2 .
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
+:S3 rdf:type owl:NamedIndividual ,
+             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam3 ,
+                                                                       :reqHDD3 ,
+                                                                       :reqHS3 ,
+                                                                       :reqRAM3 ,
+                                                                       :reqTS3 .
+
+
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
@@ -192,40 +234,91 @@
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCam1
+:reqCam1 rdf:type owl:NamedIndividual ,
+                  :reqCamera .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCam2
+:reqCam2 rdf:type owl:NamedIndividual ,
+                  :reqCamera .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCam3
+:reqCam3 rdf:type owl:NamedIndividual ,
+                  :reqCamera .
+
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD1
-:reqHDD1 rdf:type owl:NamedIndividual ;
+:reqHDD1 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 23 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD2
-:reqHDD2 rdf:type owl:NamedIndividual ;
+:reqHDD2 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 30 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHDD3
-:reqHDD3 rdf:type owl:NamedIndividual ;
+:reqHDD3 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 40 .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHS1
+:reqHS1 rdf:type owl:NamedIndividual ,
+                 :reqHumiditySensor .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHS2
+:reqHS2 rdf:type owl:NamedIndividual ,
+                 :reqHumiditySensor .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHS3
+:reqHS3 rdf:type owl:NamedIndividual ,
+                 :reqHumiditySensor .
+
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM1
-:reqRAM1 rdf:type owl:NamedIndividual ;
+:reqRAM1 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 20 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM2
-:reqRAM2 rdf:type owl:NamedIndividual ;
+:reqRAM2 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 40 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM3
-:reqRAM3 rdf:type owl:NamedIndividual ;
+:reqRAM3 rdf:type owl:NamedIndividual ,
+                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalRequirement> ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit> "MB" ;
          <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue> 30 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTS1
+:reqTS1 rdf:type owl:NamedIndividual ,
+                 :reqTemperatureSensor .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTS2
+:reqTS2 rdf:type owl:NamedIndividual ,
+                 :reqTemperatureSensor .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTS3
+:reqTS3 rdf:type owl:NamedIndividual ,
+                 :reqTemperatureSensor .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
