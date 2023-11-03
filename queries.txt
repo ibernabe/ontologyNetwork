@@ -11,3 +11,74 @@ WHERE {
 	?cr on:hasValue ?val.
 }
 
+
+
+
+
+########################################################
+#Obtiene los recursos funcionales de los nodos que se encuentran en una misma localización.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
+
+SELECT ?location ?computingNode ?resources WHERE{
+	?location rdf:type on:Location.
+	?computingNode on:physicallyLocatedAt ?location.
+	?computingNode on:hasResource ?resources .
+	?resources rdf:type on:FunctionalResource
+
+}ORDER BY ?location
+
+
+
+
+########################################################
+#Obtener los recursos computacionales por nodo junto con su valor:
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
+ 
+SELECT DISTINCT  ?cn ?cr ?val
+WHERE {
+	?cn rdf:type on:ComputingNode .
+	?cn on:hasResource ?cr.
+	?cr rdf:type ?ccc.
+	?ccc rdfs:subClassOf on:ComputationalResource.
+	?cr on:hasValue ?val.
+}
+
+
+
+########################################################
+#Obtener la lista de los requerimientos computacionales de cada servicio:
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
+ 
+SELECT DISTINCT  ?serv ?cr ?val
+WHERE {
+	?serv rdf:type on:Service .
+	?serv on:hasRequirement ?cr.
+	?cr rdf:type ?ccc.
+	?ccc rdfs:subClassOf on:ComputationalRequirement.
+	?cr on:hasValue ?val.
+}ORDER BY ?serv
+
+
+########################################################
+#Obtener la lista de los requerimientos funcionales de cada servicio:
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
+ 
+SELECT DISTINCT  ?serv ?cr
+WHERE {
+	?serv rdf:type on:Service .
+	?serv on:hasRequirement ?cr.
+	?cr rdf:type ?ccc.
+	?ccc rdfs:subClassOf on:FunctionalRequirement.
+}ORDER BY ?serv
