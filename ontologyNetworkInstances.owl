@@ -171,7 +171,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RCamera1
 :RCamera1 rdf:type owl:NamedIndividual ,
-                   <https://www.ia.urjc.es/ontologies/ontologyNetwork/Resource> .
+                   <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalResource> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
@@ -192,6 +192,8 @@
                                                                        :reqHS2 ,
                                                                        :reqRAM2 ,
                                                                        :reqTS2 .
+
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
 :S3 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
@@ -200,22 +202,6 @@
                                                                        :reqHS3 ,
                                                                        :reqRAM3 ,
                                                                        :reqTS3 .
-
-
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
-:S2 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqHDD2 ,
-                                                                       :reqRAM2 .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
-:S3 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqHDD3 ,
-                                                                       :reqRAM3 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
