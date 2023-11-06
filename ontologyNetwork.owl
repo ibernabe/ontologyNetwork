@@ -42,6 +42,9 @@
 #    Data properties
 #################################################################
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasName
+:hasName rdf:type owl:DatatypeProperty .
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLatitude
 :hasLatitude rdf:type owl:DatatypeProperty .
 
@@ -62,6 +65,19 @@
 #    Classes
 #################################################################
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCamera
+:reqCamera rdf:type owl:Class ;
+           rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHumiditySensor
+:reqHumiditySensor rdf:type owl:Class ;
+                   rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTemperatureSensor
+:reqTemperatureSensor rdf:type owl:Class ;
+                      rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#ComputationalRequirement
 :ComputationalRequirement rdf:type owl:Class ;
