@@ -156,31 +156,31 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S1
 :S1 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam1 ,
-                                                                       :reqHDD1 ,
-                                                                       :reqHS1 ,
-                                                                       :reqRAM1 ,
-                                                                       :reqTS1 .
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD1 ,
+                                                                                    :reqRAM1 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam1 ,
+                                                                                 :reqHS1 ,
+                                                                                 :reqTS1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
 :S2 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam2 ,
-                                                                       :reqHDD2 ,
-                                                                       :reqHS2 ,
-                                                                       :reqRAM2 ,
-                                                                       :reqTS2 .
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD2 ,
+                                                                                    :reqRAM2 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam2 ,
+                                                                                 :reqHS2 ,
+                                                                                 :reqTS2 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
 :S3 rdf:type owl:NamedIndividual ,
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement> :reqCam3 ,
-                                                                       :reqHDD3 ,
-                                                                       :reqHS3 ,
-                                                                       :reqRAM3 ,
-                                                                       :reqTS3 .
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD3 ,
+                                                                                    :reqRAM3 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam3 ,
+                                                                                 :reqHS3 ,
+                                                                                 :reqTS3 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
