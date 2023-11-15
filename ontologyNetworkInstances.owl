@@ -40,27 +40,30 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN1
 :CN1 rdf:type owl:NamedIndividual ,
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :Cam1 ,
-                                                                     :HDD1 ,
-                                                                     :RAM1 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD1 ,
+                                                                                  :RAM1 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :Cam1 ,
+                                                                               :HS1 ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN2
 :CN2 rdf:type owl:NamedIndividual ,
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :HDD2 ,
-                                                                     :RAM2 ,
-                                                                     :TS2 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD2 ,
+                                                                                  :RAM2 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :HS2 ,
+                                                                               :TS2 ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN3
 :CN3 rdf:type owl:NamedIndividual ,
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource> :HDD3 ,
-                                                                     :HS3 ,
-                                                                     :RAM3 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD3 ,
+                                                                                  :RAM3 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :HS3 ,
+                                                                               :TS3 ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location3 .
 
 
