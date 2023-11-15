@@ -19,6 +19,26 @@
              rdfs:range :ComputingNode .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement
+:hasComputationalRequirement rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :hasRequirement .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource
+:hasComputationalResource rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :hasResource .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement
+:hasFunctionalRequirement rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :hasRequirement .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource
+:hasFunctionalResource rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasResource .
+
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement
 :hasRequirement rdf:type owl:ObjectProperty .
 
@@ -42,15 +62,16 @@
 #    Data properties
 #################################################################
 
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasName
-:hasName rdf:type owl:DatatypeProperty .
-
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLatitude
 :hasLatitude rdf:type owl:DatatypeProperty .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLongitude
 :hasLongitude rdf:type owl:DatatypeProperty .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasName
+:hasName rdf:type owl:DatatypeProperty .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit
@@ -64,34 +85,6 @@
 #################################################################
 #    Classes
 #################################################################
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCamera
-:reqCamera rdf:type owl:Class ;
-           rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHumiditySensor
-:reqHumiditySensor rdf:type owl:Class ;
-                   rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTemperatureSensor
-:reqTemperatureSensor rdf:type owl:Class ;
-                      rdfs:subClassOf <https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalRequirement> .
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#ComputationalRequirement
-:ComputationalRequirement rdf:type owl:Class ;
-                          rdfs:subClassOf :Requirement .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#FunctionalRequirement
-:FunctionalRequirement rdf:type owl:Class ;
-                       rdfs:subClassOf :Requirement .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Requirement
-:Requirement rdf:type owl:Class .
-
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Address
 :Address rdf:type owl:Class ;
@@ -110,12 +103,12 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/CommunicationResource
 :CommunicationResource rdf:type owl:Class ;
-                       rdfs:subClassOf :Resource .
+                       rdfs:subClassOf :ResourceComponent .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputationalResource
 :ComputationalResource rdf:type owl:Class ;
-                       rdfs:subClassOf :Resource .
+                       rdfs:subClassOf :ResourceComponent .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode
@@ -124,7 +117,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/FunctionalResource
 :FunctionalResource rdf:type owl:Class ;
-                    rdfs:subClassOf :Resource .
+                    rdfs:subClassOf :ResourceComponent .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic
@@ -158,6 +151,10 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Resource
 :Resource rdf:type owl:Class .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/ResourceComponent
+:ResourceComponent rdf:type owl:Class .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Service
