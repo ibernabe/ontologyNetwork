@@ -22,7 +22,7 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasCommunicationRequirement
 :hasCommunicationRequirement rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf :hasRequirement ;
-                             rdfs:domain :ComputingNode ;
+                             rdfs:domain :Software ;
                              rdfs:range :CommunicationResource .
 
 
@@ -36,7 +36,7 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement
 :hasComputationalRequirement rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf :hasRequirement ;
-                             rdfs:domain :ComputingNode ;
+                             rdfs:domain :Software ;
                              rdfs:range :ComputationalResource .
 
 
@@ -50,7 +50,7 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement
 :hasFunctionalRequirement rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf :hasRequirement ;
-                          rdfs:domain :ComputingNode ;
+                          rdfs:domain :Software ;
                           rdfs:range :FunctionalResource .
 
 
