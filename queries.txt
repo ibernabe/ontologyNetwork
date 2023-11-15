@@ -1,64 +1,69 @@
 
 
 ########################################################
-#Requerimientos Funcionales de cada servicio:
+#Obtiene los  requisitos funcionales de los servicios
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/> 
 SELECT DISTINCT  ?serv ?fr
 WHERE {
-	?fr rdf:type on:FunctionalRequirement.
-	?serv on:hasRequirement ?fr.
+	?serv on:hasFunctionalRequirement ?fr.
 	?serv rdf:type on:Service .
 }ORDER BY ?serv
 
 
 
+
+
 ########################################################
-#Requerimientos Computacionales de cada servicio:
+#Obtener la lista de los requerimientos computacionales de cada servicio junto su valor:
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/> 
-SELECT DISTINCT  ?serv ?cr
+SELECT DISTINCT  ?serv ?fr ?val
 WHERE {
-	?cr rdf:type on:ComputationalRequirement.
-	?serv on:hasRequirement ?cr.
+
+	?serv on:hasComputationalRequirement ?fr.
 	?serv rdf:type on:Service .
+	?fr on:hasValue ?val.
+}ORDER BY ?serv
+
+
+########################################################
+#Obtener los recursos computacionales por nodo junto con su valor:
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/> 
+SELECT DISTINCT  ?serv ?fr ?val
+WHERE {
+
+	?serv on:hasComputationalResource ?fr.
+	?serv rdf:type on:ComputingNode .
+	?fr on:hasValue ?val.
+}ORDER BY ?serv
+
+########################################################
+#Obtener los recursos funcionales de los nodos:
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/> 
+SELECT DISTINCT  ?serv ?fr ?val
+WHERE {
+
+	?serv on:hasFunctionalResource ?fr.
+	?serv rdf:type on:ComputingNode .
+
 }ORDER BY ?serv
 
 
 
-########################################################
-#Recursos Computacionales de cada Nodo de Computación y sus valores:
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
- 
-SELECT DISTINCT  ?cn ?cr ?val
-WHERE {
-	?cn rdf:type on:ComputingNode .
-	?cn on:hasResource ?cr.
-	?cr rdf:type on:ComputationalResource.
-	?cr on:hasValue ?val.
-} ORDER BY ?cn
 
 
 
 
 ########################################################
-#Recursos funcionales de cada nodo agrupados por localización.
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX on: <https://www.ia.urjc.es/ontologies/ontologyNetwork/>
-
-SELECT ?location ?computingNode ?resources WHERE{
-	?location rdf:type on:Location.
-	?computingNode on:physicallyLocatedAt ?location.
-	?computingNode on:hasResource ?resources .
-	?resources rdf:type on:FunctionalResource
-
-}ORDER BY ?location ?computingNode
+#Obtener los recursos funcionales compartidos por los nodos
