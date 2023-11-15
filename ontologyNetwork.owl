@@ -109,6 +109,12 @@
 :hasValue rdf:type owl:DatatypeProperty .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/isShareable
+:isShareable rdf:type owl:DatatypeProperty ;
+             rdfs:domain :FunctionalResource ;
+             rdfs:range xsd:boolean .
+
+
 #################################################################
 #    Classes
 #################################################################
