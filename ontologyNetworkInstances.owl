@@ -69,7 +69,8 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam1
 :Cam1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Shareable> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam2
