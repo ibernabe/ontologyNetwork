@@ -109,12 +109,6 @@
 :hasValue rdf:type owl:DatatypeProperty .
 
 
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/isShareable
-:isShareable rdf:type owl:DatatypeProperty ;
-             rdfs:domain :FunctionalResource ;
-             rdfs:range xsd:boolean .
-
-
 #################################################################
 #    Classes
 #################################################################
@@ -189,6 +183,10 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Service
 :Service rdf:type owl:Class ;
          rdfs:subClassOf :Software .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Shareable
+:Shareable rdf:type owl:Class .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/Software
