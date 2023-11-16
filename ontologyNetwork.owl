@@ -63,7 +63,7 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasRequirement
 :hasRequirement rdf:type owl:ObjectProperty ;
-                rdfs:domain :ComputingNode ;
+                rdfs:domain :Software ;
                 rdfs:range :Resource .
 
 
