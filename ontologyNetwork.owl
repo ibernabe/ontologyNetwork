@@ -79,7 +79,8 @@
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt
-:physicallyLocatedAt rdf:type owl:ObjectProperty ;
+:physicallyLocatedAt rdf:type owl:ObjectProperty ,
+                              owl:TransitiveProperty ;
                      rdfs:domain :ComputingNode ,
                                  :Resource ;
                      rdfs:range :Location .
