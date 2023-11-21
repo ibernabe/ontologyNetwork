@@ -14,7 +14,8 @@
 #################################################################
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectedTo
-:connectedTo rdf:type owl:ObjectProperty ;
+:connectedTo rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
              rdfs:domain :ComputingNode ;
              rdfs:range :ComputingNode .
 
@@ -69,7 +70,8 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasResource
 :hasResource rdf:type owl:ObjectProperty ;
-             rdfs:domain :ComputingNode .
+             rdfs:domain :ComputingNode ;
+             rdfs:range :Resource .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/installedOn
@@ -81,8 +83,11 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt
 :physicallyLocatedAt rdf:type owl:ObjectProperty ,
                               owl:TransitiveProperty ;
-                     rdfs:domain :ComputingNode ,
-                                 :Resource ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :ComputingNode
+                                                 :Resource
+                                               )
+                                 ] ;
                      rdfs:range :Location .
 
 
@@ -91,23 +96,37 @@
 #################################################################
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLatitude
-:hasLatitude rdf:type owl:DatatypeProperty .
+:hasLatitude rdf:type owl:DatatypeProperty ;
+             rdfs:domain :GeoLocation ;
+             rdfs:range xsd:double .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLongitude
-:hasLongitude rdf:type owl:DatatypeProperty .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasName
-:hasName rdf:type owl:DatatypeProperty .
+:hasLongitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain :GeoLocation ;
+              rdfs:range xsd:double .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit
-:hasUnit rdf:type owl:DatatypeProperty .
+:hasUnit rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Bandwidth
+                                     :Disk
+                                     :Memory
+                                   )
+                     ] ;
+         rdfs:range xsd:Name .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
-:hasValue rdf:type owl:DatatypeProperty .
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Bandwidth
+                                      :Disk
+                                      :Memory
+                                    )
+                      ] ;
+          rdfs:range xsd:int .
 
 
 #################################################################
