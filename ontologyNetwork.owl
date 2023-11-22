@@ -14,8 +14,7 @@
 #################################################################
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/connectedTo
-:connectedTo rdf:type owl:ObjectProperty ,
-                      owl:SymmetricProperty ;
+:connectedTo rdf:type owl:ObjectProperty ;
              rdfs:domain :ComputingNode ;
              rdfs:range :ComputingNode .
 
@@ -75,20 +74,21 @@
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/installedOn
-:installedOn rdf:type owl:ObjectProperty ;
-             rdfs:domain :Software ;
-             rdfs:range :ComputingNode .
+:installedOn rdf:type owl:ObjectProperty .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt
 :physicallyLocatedAt rdf:type owl:ObjectProperty ,
+                              owl:SymmetricProperty ,
                               owl:TransitiveProperty ;
-                     rdfs:domain [ rdf:type owl:Class ;
+                     rdfs:domain :Software ,
+                                 [ rdf:type owl:Class ;
                                    owl:unionOf ( :ComputingNode
                                                  :Resource
                                                )
                                  ] ;
-                     rdfs:range :Location .
+                     rdfs:range :ComputingNode ,
+                                :Location .
 
 
 #################################################################
@@ -97,14 +97,12 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLatitude
 :hasLatitude rdf:type owl:DatatypeProperty ;
-             rdfs:domain :GeoLocation ;
-             rdfs:range xsd:double .
+             rdfs:domain :GeoLocation .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasLongitude
 :hasLongitude rdf:type owl:DatatypeProperty ;
-              rdfs:domain :GeoLocation ;
-              rdfs:range xsd:double .
+              rdfs:domain :GeoLocation .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit
@@ -114,8 +112,7 @@
                                      :Disk
                                      :Memory
                                    )
-                     ] ;
-         rdfs:range xsd:Name .
+                     ] .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
@@ -125,8 +122,7 @@
                                       :Disk
                                       :Memory
                                     )
-                      ] ;
-          rdfs:range xsd:int .
+                      ] .
 
 
 #################################################################
