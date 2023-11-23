@@ -74,21 +74,20 @@
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/installedOn
-:installedOn rdf:type owl:ObjectProperty .
+:installedOn rdf:type owl:ObjectProperty ;
+             rdfs:domain :Software ;
+             rdfs:range :ComputingNode .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt
 :physicallyLocatedAt rdf:type owl:ObjectProperty ,
-                              owl:SymmetricProperty ,
                               owl:TransitiveProperty ;
-                     rdfs:domain :Software ,
-                                 [ rdf:type owl:Class ;
+                     rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( :ComputingNode
                                                  :Resource
                                                )
                                  ] ;
-                     rdfs:range :ComputingNode ,
-                                :Location .
+                     rdfs:range :Location .
 
 
 #################################################################
