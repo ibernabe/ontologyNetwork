@@ -11,14 +11,6 @@
                                                                owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#hasName
-:hasName rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Individuals
 #################################################################
 
@@ -117,20 +109,17 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location1
 :Location1 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> ;
-           :hasName "Zone1" .
+                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location2
 :Location2 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> ;
-           :hasName "Zone1" .
+                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location3
 :Location3 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> ;
-           :hasName "Zone2" .
+                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM1
