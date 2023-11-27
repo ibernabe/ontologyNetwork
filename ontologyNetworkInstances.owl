@@ -35,8 +35,9 @@
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD1 ,
                                                                                   :RAM1 ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :Cam1 ,
-                                                                               :HS1 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location1 .
+                                                                               :HS1 ,
+                                                                               :TS1 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN2
@@ -44,9 +45,10 @@
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD2 ,
                                                                                   :RAM2 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :HS2 ,
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :Cam2 ,
+                                                                               :HS2 ,
                                                                                :TS2 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location1 .
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone2 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN3
@@ -54,9 +56,16 @@
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
      <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalResource> :HDD3 ,
                                                                                   :RAM3 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :HS3 ,
-                                                                               :TS3 ;
-     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Location3 .
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :Cam3 ,
+                                                                               :HS3 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone1 .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#CN4
+:CN4 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/ComputingNode> ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalResource> :Cam4 ;
+     <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam1
@@ -72,6 +81,11 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam3
 :Cam3 rdf:type owl:NamedIndividual ,
+               <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Cam4
+:Cam4 rdf:type owl:NamedIndividual ,
                <https://www.ia.urjc.es/ontologies/ontologyNetwork/Camera> .
 
 
@@ -111,19 +125,9 @@
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
 
 
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location1
-:Location1 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location2
-:Location2 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
-
-
-###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Location3
-:Location3 rdf:type owl:NamedIndividual ,
-                    <https://www.ia.urjc.es/ontologies/ontologyNetwork/Generic> .
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#HS4
+:HS4 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#RAM1
@@ -153,8 +157,8 @@
     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD1 ,
                                                                                     :reqRAM1 ;
     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam1 ,
-                                                                                 :reqHS1 ,
-                                                                                 :reqTS1 .
+                                                                                 :reqTS1 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S2
@@ -162,9 +166,7 @@
              <https://www.ia.urjc.es/ontologies/ontologyNetwork/Service> ;
     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD2 ,
                                                                                     :reqRAM2 ;
-    <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam2 ,
-                                                                                 :reqHS2 ,
-                                                                                 :reqTS2 .
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone1 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#S3
@@ -173,8 +175,8 @@
     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasComputationalRequirement> :reqHDD3 ,
                                                                                     :reqRAM3 ;
     <https://www.ia.urjc.es/ontologies/ontologyNetwork/hasFunctionalRequirement> :reqCam3 ,
-                                                                                 :reqHS3 ,
-                                                                                 :reqTS3 .
+                                                                                 :reqTS3 ;
+    <https://www.ia.urjc.es/ontologies/ontologyNetwork/physicallyLocatedAt> :Zone2 .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS1
@@ -191,6 +193,26 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS3
 :TS3 rdf:type owl:NamedIndividual ,
               <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#TS4
+:TS4 rdf:type owl:NamedIndividual ,
+              <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Zone1
+:Zone1 rdf:type owl:NamedIndividual ,
+                <https://www.ia.urjc.es/ontologies/ontologyNetwork/GeoLocation> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Zone2
+:Zone2 rdf:type owl:NamedIndividual ,
+                <https://www.ia.urjc.es/ontologies/ontologyNetwork/GeoLocation> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#Zone3
+:Zone3 rdf:type owl:NamedIndividual ,
+                <https://www.ia.urjc.es/ontologies/ontologyNetwork/GeoLocation> .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqCam1
@@ -244,6 +266,11 @@
                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
 
 
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqHS4
+:reqHS4 rdf:type owl:NamedIndividual ,
+                 <https://www.ia.urjc.es/ontologies/ontologyNetwork/HumiditySensor> .
+
+
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqRAM1
 :reqRAM1 rdf:type owl:NamedIndividual ,
                   <https://www.ia.urjc.es/ontologies/ontologyNetwork/Memory> ;
@@ -277,6 +304,11 @@
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTS3
 :reqTS3 rdf:type owl:NamedIndividual ,
+                 <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
+
+
+###  https://www.ia.urjc.es/ontologies/ontologyNetwork/instances#reqTS4
+:reqTS4 rdf:type owl:NamedIndividual ,
                  <https://www.ia.urjc.es/ontologies/ontologyNetwork/TemperatureSensor> .
 
 
