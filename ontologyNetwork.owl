@@ -109,11 +109,12 @@
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasUnit
 :hasUnit rdf:type owl:DatatypeProperty ;
          rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :CommunicationResource
-                                     :ComputationalResource
-                                     :FunctionalResource
+                       owl:unionOf ( :Bandwidth
+                                     :Disk
+                                     :Memory
                                    )
-                     ] .
+                     ] ;
+         rdfs:range xsd:string .
 
 
 ###  https://www.ia.urjc.es/ontologies/ontologyNetwork/hasValue
