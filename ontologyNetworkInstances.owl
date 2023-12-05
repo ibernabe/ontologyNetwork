@@ -8,7 +8,7 @@
 
 <https://www.ia.urjc.es/ontologies/networkOntology/instances> rdf:type owl:Ontology ;
                                                                owl:versionIRI <https://www.ia.urjc.es/ontologies/networkOntology/instances> ;
-                                                               owl:imports <https://www.ia.urjc.es/ontologies/ontologyNetwork/> .
+                                                               owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
 #################################################################
 #    Individuals
