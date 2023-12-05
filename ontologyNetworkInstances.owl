@@ -1,315 +1,345 @@
-@prefix : <https://www.ia.urjc.es/ontologies/networkOntology/instances#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://www.ia.urjc.es/ontologies/networkOntology/instances#> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.ia.urjc.es/ontologies/ontologyNetwork/"
+     xml:base="https://www.ia.urjc.es/ontologies/ontologyNetwork/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/">
+        <owl:versionIRI rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/"/>
+    </owl:Ontology>
+    
 
-<https://www.ia.urjc.es/ontologies/networkOntology/instances> rdf:type owl:Ontology ;
-                                                               owl:versionIRI <https://www.ia.urjc.es/ontologies/networkOntology/instances> ;
-                                                               owl:imports <https://raw.githubusercontent.com/ibernabe/ontologyNetwork/main/ontologyNetwork.owl> .
 
-#################################################################
-#    Individuals
-#################################################################
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#BW1
-:BW1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/Bandwidth> .
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#BW2
-:BW2 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/Bandwidth> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/connectedTo -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/connectedTo">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#BW3
-:BW3 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/Bandwidth> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/deployedIn -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#CN1
-:CN1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalResource> :HDD1 ,
-                                                                                  :RAM1 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource> :Cam1 ,
-                                                                               :HS1 ,
-                                                                               :TS1 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone1 .
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/deployedIn">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+    </owl:ObjectProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#CN2
-:CN2 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalResource> :HDD2 ,
-                                                                                  :RAM2 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource> :Cam2 ,
-                                                                               :HS2 ,
-                                                                               :TS2 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone2 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasCommunicationRequirement -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasCommunicationRequirement">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasRequirement"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#CN3
-:CN3 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalResource> :HDD3 ,
-                                                                                  :RAM3 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource> :Cam3 ,
-                                                                               :HS3 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone1 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasCommunicationResource -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#CN4
-:CN4 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode> ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource> :Cam4 ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone1 .
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasCommunicationResource">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasResource"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource"/>
+    </owl:ObjectProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Cam1
-:Cam1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Camera> ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Shareable> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalRequirement -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalRequirement">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasRequirement"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Cam2
-:Cam2 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalResource -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Cam3
-:Cam3 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalResource">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasResource"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource"/>
+    </owl:ObjectProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Cam4
-:Cam4 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalRequirement -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalRequirement">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasRequirement"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HDD1
-:HDD1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 20 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HDD2
-:HDD2 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 40 .
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalResource">
+        <rdfs:subPropertyOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/hasResource"/>
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource"/>
+    </owl:ObjectProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HDD3
-:HDD3 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 30 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasRequirement -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasRequirement">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HS1
-:HS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasResource -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HS2
-:HS2 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasResource">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    </owl:ObjectProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HS3
-:HS3 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt -->
 
+    <owl:ObjectProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+                    <rdf:Description rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Location"/>
+    </owl:ObjectProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#HS4
-:HS4 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#RAM1
-:RAM1 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 32 .
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#RAM2
-:RAM2 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 32 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasLatitude -->
 
+    <owl:DatatypeProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasLatitude">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#RAM3
-:RAM3 rdf:type owl:NamedIndividual ,
-               <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-      <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 32 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasLongitude -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#S1
-:S1 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/networkOntology/Service> ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalRequirement> :reqHDD1 ,
-                                                                                    :reqRAM1 ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalRequirement> :reqCam1 ,
-                                                                                 :reqTS1 ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone1 .
+    <owl:DatatypeProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasLongitude">
+        <rdfs:domain rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#S2
-:S2 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/networkOntology/Service> ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalRequirement> :reqHDD2 ,
-                                                                                    :reqRAM2 ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone1 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasUnit -->
 
+    <owl:DatatypeProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasUnit">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource"/>
+                    <rdf:Description rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#S3
-:S3 rdf:type owl:NamedIndividual ,
-             <https://www.ia.urjc.es/ontologies/networkOntology/Service> ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/hasComputationalRequirement> :reqHDD3 ,
-                                                                                    :reqRAM3 ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/hasFunctionalRequirement> :reqCam3 ,
-                                                                                 :reqTS3 ;
-    <https://www.ia.urjc.es/ontologies/networkOntology/physicallyLocatedAt> :Zone2 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/hasValue -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#TS1
-:TS1 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
+    <owl:DatatypeProperty rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/hasValue"/>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#TS2
-:TS2 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> ;
-     <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 20 .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#TS3
-:TS3 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Address -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#TS4
-:TS4 rdf:type owl:NamedIndividual ,
-              <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Address">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Location"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Zone1
-:Zone1 rdf:type owl:NamedIndividual ,
-                <https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Bandwidth -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Bandwidth">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource"/>
+    </owl:Class>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Zone2
-:Zone2 rdf:type owl:NamedIndividual ,
-                <https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Camera -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#Zone3
-:Zone3 rdf:type owl:NamedIndividual ,
-                <https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation> .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Camera">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqCam1
-:reqCam1 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/CommunicationResource">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    </owl:Class>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqCam2
-:reqCam2 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqCam3
-:reqCam3 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Camera> .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHDD1
-:reqHDD1 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 10 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/ComputingNode"/>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHDD2
-:reqHDD2 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 10 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Disk -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHDD3
-:reqHDD3 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Disk> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 30 .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Disk">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHS1
-:reqHS1 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    </owl:Class>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHS2
-:reqHS2 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Generic -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHS3
-:reqHS3 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Generic">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Location"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqHS4
-:reqHS4 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/GeoLocation">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Location"/>
+    </owl:Class>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqRAM1
-:reqRAM1 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 10 .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqRAM2
-:reqRAM2 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 10 .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/HumiditySensor">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Sensor"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqRAM3
-:reqRAM3 rdf:type owl:NamedIndividual ,
-                  <https://www.ia.urjc.es/ontologies/networkOntology/Memory> ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasUnit> "MB" ;
-         <https://www.ia.urjc.es/ontologies/networkOntology/hasValue> 30 .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Location -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Location"/>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqTS1
-:reqTS1 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Memory -->
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqTS2
-:reqTS2 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Memory">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/ComputationalResource"/>
+    </owl:Class>
+    
 
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqTS3
-:reqTS3 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Resource -->
 
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Resource"/>
+    
 
-###  https://www.ia.urjc.es/ontologies/networkOntology/instances#reqTS4
-:reqTS4 rdf:type owl:NamedIndividual ,
-                 <https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor> .
 
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Sensor -->
 
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Sensor">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/FunctionalResource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Service -->
+
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Service">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Shareable -->
+
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Shareable"/>
+    
+
+
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/Software -->
+
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/Software"/>
+    
+
+
+    <!-- https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor -->
+
+    <owl:Class rdf:about="https://www.ia.urjc.es/ontologies/networkOntology/TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="https://www.ia.urjc.es/ontologies/networkOntology/Sensor"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
